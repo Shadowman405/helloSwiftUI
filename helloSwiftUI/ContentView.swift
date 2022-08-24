@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    let towns = Town.all()
+    
     var body: some View {
-        ZStack {
-            Image("Inferno-in")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .cornerRadius(30)
-            
-            VStack(alignment: .center) {
-                    
-                    Text("Inferno")
-                    .font(.custom("HoeflerText-Italic", size: 45)
-                        .weight(.ultraLight))
-                        .foregroundColor(.yellow)
+        List(self.towns, id: \.name) { town in
+            ZStack {
+                Image(town.imageURL)
+                    .resizable()
+                    .frame(width: 300, height: 200, alignment: .center)
+                    .cornerRadius(30)
+                    .padding()
+                VStack{
+                    Text(town.name)
+                        .font(.largeTitle)
+                        .foregroundColor(.orange)
+                }
             }
         }
-        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
