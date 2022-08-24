@@ -16,6 +16,9 @@ extension Town {
     static func all() -> [Town] {
         return [Town(name: "Inferno", imageURL: "Inferno-in"),
                 Town(name: "Castle", imageURL: "Castle-in"),
-                Town(name: "Tower", imageURL: "Tower-in")]
+                Town(name: "Tower", imageURL: "Tower-in"),
+                Town(name: "Rampart", imageURL: "Rampart-in"),
+                Town(name: "Stronghold", imageURL: "Stronghold-in")
+        ]
     }
 }
