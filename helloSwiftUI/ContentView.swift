@@ -9,9 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+        ZStack {
+            Image("Inferno-in")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(30)
+            
+            VStack(alignment: .center) {
+                    
+                    Text("Inferno")
+                    .font(.custom("HoeflerText-Italic", size: 45)
+                        .weight(.ultraLight))
+                        .foregroundColor(.yellow)
+            }
+        }
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {
