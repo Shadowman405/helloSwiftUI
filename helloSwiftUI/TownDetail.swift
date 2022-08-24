@@ -15,14 +15,16 @@ struct TownDetail: View {
         VStack{
             Image(town.imageURL)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: self.zoomed ? .fill : .fit)
                 .onTapGesture {
-                    <#code#>
+                    withAnimation{
+                        self.zoomed.toggle()
+                    }
                 }
             
             Text(town.name)
                 .font(.largeTitle)
-        }
+        }.navigationBarTitle(town.name)
     }
 }
 
