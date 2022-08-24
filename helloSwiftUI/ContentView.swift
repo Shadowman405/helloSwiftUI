@@ -11,8 +11,13 @@ struct ContentView: View {
     let towns = Town.all()
     
     var body: some View {
-        List(self.towns, id: \.name) { town in
-            TownCell(town: town)
+        NavigationView {
+            List(self.towns, id: \.name) { town in
+                NavigationLink(destination: TownDetail(town: town)) {
+                    TownCell(town: town)
+                    }
+                }
+            .navigationBarTitle("Towns")
         }
     }
 }
